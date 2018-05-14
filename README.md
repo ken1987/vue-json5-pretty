@@ -49,7 +49,7 @@ No \\n's!",
 
 * [ value ] => json5 data.
 
-* [ expandDepth ] => by default, the depth of this tree will expand. default: 1.
+* [ openDep ] => by default, the depth of this tree will expand. default: 1.
 
 * [ prefix ] => class prefix. default: 'json5-pretty'.
 
