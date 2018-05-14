@@ -1,0 +1,13 @@
+@import '../style/variable.less';
+
+.@{prefix}-key {
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-right: 0.5em;
+  color: @keyColor;
+
+  &::after {
+    content: ':';
+    color: @color;
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "name": "vue-json5-pretty",
+  "version": "0.0.1",
+  "description": "JSON5 pretty of Vue component",
+  "keywords": ["vue", "json", "json5", "pretty"],
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.9.4"
+  },
+  "files": ["src", "index.js"],
+  "scripts": {
+    "start": "webpack-dev-server --config build/webpack.config.dev.js --hot",
+    "lint:css": "stylelint ./src/**/*.{css,less} --fix",
+    "lint:js": "eslint ./ --fix",
+    "lint": "npm run lint:css && npm run lint:js",
+    "unit": "karma start test/unit/karma.conf.js",
+    "test": "npm run lint && npm run unit",
+    "precommit": "lint-staged",
+    "commitmsg": "commitlint -e $GIT_PARAMS"
+  },
+  "lint-staged": {
+    "./src/**/*.{js,vue}": ["eslint --fix", "git add"],
+    "./src/**/*.{css,less}": ["stylelint --fix", "git add"]
+  },
+  "peerDependencies": {
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {
+    "commitizen": "^2.9.6",
+    "@commitlint/cli": "^6.2.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.4",
+
+    "glob": "^7.1.2",
+    "less": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "file-loader": "^1.1.11",
+    "url-loader": "^1.0.1",
+    "css-loader": "^0.28.7",
+    "less-loader": "^4.0.5",
+    "postcss-loader": "^2.1.4",
+    "autoprefixer": "^8.3.0",
+
+    "@babel/core": "^7.0.0-beta.46",
+    "@babel/preset-env": "^7.0.0-beta.46",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^8.0.0-beta.2",
+    "babel-plugin-transform-object-rest-spread": "^7.0.0-beta.3",
+
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-import-resolver-webpack": "^0.9.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-html": "^4.0.3",
+    "eslint-plugin-import": "^2.11.0",
+
+    "mocha": "^5.1.1",
+    "mocha-webpack": "^2.0.0-beta.0",
+    "chai": "^4.1.2",
+    "sinon": "^5.0.7",
+    "sinon-chai": "^3.0.0",
+
+    "karma": "^2.0.2",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "^1.1.1",
+    "karma-mocha": "^1.3.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^3.0.0",
+
+    "style-loader": "^0.21.0",
+    "stylelint": "^9.2.0",
+    "stylelint-config-standard": "^18.0.0",
+    "stylelint-processor-html": "^1.0.0",
+
+    "vue": "^2.5.16",
+    "vue-loader": "^15.0.10",
+    "vue-template-compiler": "^2.5.16",
+
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-middleware": "^3.1.3",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-hot-middleware": "^2.22.2"
+  }
+}

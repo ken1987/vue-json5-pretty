@@ -1,0 +1,38 @@
+@import '../style/variable.less';
+
+@size: @lineHeight * 1em;
+
+.@{prefix}-arrow {
+  flex-grow: 0;
+  flex-shrink: 0;
+  overflow: hidden;
+  width: @size;
+  height: @size;
+  text-align: center;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: (@size - @arrowSize) * 0.5;
+    margin-left: (@size - @arrowSize) * 0.5;
+    border-width: @arrowSize*0.5 0 @arrowSize*0.5 @arrowSize;
+    border-style: solid none solid solid;
+    border-color: transparent transparent transparent @arrowColor;
+  }
+
+  &--open {
+    &::before {
+      border-width: @arrowSize @arrowSize*0.5 0;
+      border-style: solid solid none;
+      border-color: @arrowColor transparent transparent;
+    }
+  }
+
+  &--disable {
+    &::before {
+      display: none;
+    }
+  }
+}
